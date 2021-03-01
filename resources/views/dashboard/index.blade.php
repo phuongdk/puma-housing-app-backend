@@ -8,7 +8,7 @@
     <div class="col-lg-12 col-xl-6">
         <div class="card mt-3">
             <div class="card-body">
-                <h5 class="card-title">Most Liked 10 Properties</h5>
+                <h5 class="card-title">Properties trending</h5>
 
                 <table id="likedPropertiesTable" class="table table-striped">
                     <thead>
@@ -28,7 +28,7 @@
                         @foreach ($topList as $item)
                         <tr>
                             <td>
-                                {{$item->propert_title}}
+                                {{$item->property_title}}
                             </td>
                             <td>
                                 {{$item->city_name}}

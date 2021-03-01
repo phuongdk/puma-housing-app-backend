@@ -63,13 +63,12 @@ class PropertiesController extends BaseAPIController
                 $properties->where('parking_count', '=', $parkingCount);
         }
 
-        $properties = $properties->whereBetween('price', [$request->minPrice, $request->maxPrice]);
+        // $properties = $properties->whereBetween('price', [$request->minPrice, $request->maxPrice]);
         $properties = $properties->whereBetween('size', [$request->minSize, $request->maxSize]);
 
         if ($request->address != '') {
             $properties = $properties->where('address', 'like', '%' . $request->address . '%');
         }
-
         return $this->responseJSON(
             $properties->get()
         );

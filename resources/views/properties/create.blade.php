@@ -154,7 +154,7 @@
                     <div class="form-group">
                         <label class="control-label">Currency</label>
                         <select name="currency" class="form-control">
-                            @foreach (array('USD', 'VND') as $item)
+                            @foreach (array('VNĐ', 'USD') as $item)
                             <option value="{{ $item }}" {{ $item == old('currency') ? "selected" : "" }}>
                                 {{ $item }}
                             </option>

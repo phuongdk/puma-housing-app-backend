@@ -33,7 +33,7 @@ class CreatePropertiesTable extends Migration
             $table->unsignedSmallInteger('kitchen_room_count');
             $table->unsignedSmallInteger('parking_count');
             $table->text('additional_features')->nullable();
-            $table->integer('price');
+            $table->double('price',20,0);
             $table->string('currency', 5);
             $table->text('address');
             $table->float('latitude', 9, 6);

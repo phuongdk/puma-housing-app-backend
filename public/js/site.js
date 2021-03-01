@@ -13,7 +13,7 @@ function createTable(element) {
       [5, 10, 25, 50, 100, -1],
       [5, 10, 25, 50, 100, 'All'],
     ],
-    iDisplayLength: 5,
+    iDisplayLength: 10,
     order: [],
     dom:
       "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +

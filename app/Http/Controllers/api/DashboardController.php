@@ -16,12 +16,12 @@ class DashboardController extends BaseAPIController
         $appSettings = AppSettings::find(1);
         $headerImages = $appSettings ? explode(',', $appSettings->header_images) : [];
 
-        $featuredProperties = Property::with('property_type', 'property_category', 'user', 'city')->where('visible', 1)->get();
+        $featuredProperties = Property::with('property_type', 'property_category', 'user', 'city')->where('featured', 1)->where('visible', 1)->get();
 
-        $newProperties = Property::with('property_type', 'property_category', 'user', 'city')
+				$newProperties = Property::with('property_type', 'property_category', 'user', 'city')
             ->where('visible', 1)
             ->orderByRaw('properties.created_at DESC')
-            ->take(5)
+            // ->take(5)
             ->get();
 
         $topSearchCities = City::orderByRaw('search_count DESC')->take(10)->get();
@@ -29,9 +29,9 @@ class DashboardController extends BaseAPIController
         return $this->responseJSON(
             [
                 'headerImages' => $headerImages,
+                'topSearchCities' => $topSearchCities,
                 'featuredProperties' => $featuredProperties,
                 'newProperties' => $newProperties,
-                'topSearchCities' => $topSearchCities,
             ]
         );
     }
