@@ -4,7 +4,7 @@
 
 <form class="form-signin" method="POST" action="{{ route('login') }}">
     @csrf
-    <img class="mb-3" src="/logo.png" alt="" width="300">
+    <img class="mb-3" src="{{asset('logo.png')}}" alt="" width="300">
     <h1 class="h4 mb-4 font-weight-normal">Please sign in</h1>
 
     <label for="username" class="sr-only">Username</label>

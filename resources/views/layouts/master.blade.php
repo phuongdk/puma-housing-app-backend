@@ -20,7 +20,7 @@
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 
-    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="{{asset('css/site.css')}}" />
 </head>
 
 <body>
@@ -48,28 +48,28 @@
         <div id="sidebar-wrapper" class="sidebar bg-light">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a href="/" class="nav-link {{ '/' == request()->path() ? 'active' : '' }}">
+                    <a href="{{url('/')}}" class="nav-link {{ '/' == request()->path() ? 'active' : '' }}">
                         <span data-feather="grid"></span>Dashboard
                     </a>
                 </li>
 
 								@if (Auth::user()->is_admin)
                 <li class="nav-item">
-                    <a href="/cities" class="nav-link {{ 'cities' == request()->path() || Str::startsWith(request()->path(), 'cities/') ? 'active' : '' }}">
+                    <a href="{{url('cities')}}" class="nav-link {{ 'cities' == request()->path() || Str::startsWith(request()->path(), 'cities/') ? 'active' : '' }}">
                         <span data-feather="map-pin"></span>Cities
                     </a>
                 </li>
                 @endif
 
                 <li class="nav-item">
-                    <a href="/properties" class="nav-link {{ 'properties' == request()->path() || Str::startsWith(request()->path(), 'properties/') ? 'active' : '' }}">
+                    <a href="{{url('properties')}}" class="nav-link {{ 'properties' == request()->path() || Str::startsWith(request()->path(), 'properties/') ? 'active' : '' }}">
                         <span data-feather="home"></span>Properties
                     </a>
                 </li>
 
                 @if (Auth::user()->is_admin)
                 <li class="nav-item">
-                    <a href="/property_categories" class="nav-link {{ 'property_categories' == request()->path() || Str::startsWith(request()->path(), 'property_categories/') ? 'active' : '' }}">
+                    <a href="{{url('property_categories')}}" class="nav-link {{ 'property_categories' == request()->path() || Str::startsWith(request()->path(), 'property_categories/') ? 'active' : '' }}">
                         <span data-feather="layers"></span>Property Categories
                     </a>
                 </li>
@@ -77,7 +77,7 @@
 
                 @if (Auth::user()->is_admin)
                 <li class="nav-item">
-                    <a href="/news" class="nav-link {{ 'news' == request()->path() || Str::startsWith(request()->path(), 'news/') ? 'active' : '' }}">
+                    <a href="{{url('news')}}" class="nav-link {{ 'news' == request()->path() || Str::startsWith(request()->path(), 'news/') ? 'active' : '' }}">
                         <span data-feather="tv"></span>News
                     </a>
                 </li>
@@ -85,7 +85,7 @@
 
                 @if (Auth::user()->is_admin)
                 <li class="nav-item">
-                    <a href="/news_categories" class="nav-link {{ 'news_categories' == request()->path() || Str::startsWith(request()->path(), 'news_categories/') ? 'active' : '' }}">
+                    <a href="{{url('news_categories')}}" class="nav-link {{ 'news_categories' == request()->path() || Str::startsWith(request()->path(), 'news_categories/') ? 'active' : '' }}">
                         <span data-feather="layers"></span>News Categories
                     </a>
                 </li>
@@ -93,14 +93,14 @@
 
                 @if (Auth::user()->is_admin)
                 <li class="nav-item">
-                    <a href="/users" class="nav-link {{ 'users' == request()->path() || Str::startsWith(request()->path(), 'users/') ? 'active' : '' }}">
+                    <a href="{{url('users')}}" class="nav-link {{ 'users' == request()->path() || Str::startsWith(request()->path(), 'users/') ? 'active' : '' }}">
                         <span data-feather="user"></span>Users
                     </a>
                 </li>
                 @endif
 
                 <li class="nav-item">
-                    <a href="/settings" class="nav-link {{ 'settings' == request()->path() ? 'active' : '' }}">
+                    <a href="{{url('settings')}}" class="nav-link {{ 'settings' == request()->path() ? 'active' : '' }}">
                         <span data-feather="settings"></span>Settings
                     </a>
                 </li>
@@ -122,7 +122,7 @@
     <!-- Summernote -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
 
-    <script src="/js/site.js" asp-append-version="true"></script>
+    <script src="{{asset('/js/site.js')}}" asp-append-version="true"></script>
     @stack('scripts')
 </body>
 
