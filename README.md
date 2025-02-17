@@ -1,6 +1,8 @@
 # puma-housing-app
 Puma Housing Estate Application Backend with Laravel 8.x
 
+Backend API server production URL: https://phuongdk.com/puma-housing-backend
+
 # commands
 php artisan migrate
 php artisan db:seeds
